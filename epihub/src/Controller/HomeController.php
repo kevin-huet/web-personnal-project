@@ -7,6 +7,7 @@ use App\Entity\Property;
 use App\Repository\PropertyRepository;
 use App\Form\RegisterFormType;
 use App\Form\LoginFormType;
+use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -24,8 +25,6 @@ class HomeController extends AbstractController
      */
     public function index(): Response
     {
-        $property = $this->repository->find(1);
-        dump($property);
         return $this->render('pages/index.html.twig', [
             'current_menu' => 'home'
         ]);
@@ -35,8 +34,11 @@ class HomeController extends AbstractController
      */
     public function article(): Response
     {
-        $repository = $this->getDoctrine()->getRepository(Property::class);
-        dump($repository);
+        //$repository = $this->getDoctrine()->getRepository(Property::class);
+        //dump($repository);
+        $property = $this->repository->findAllVisible();
+        dump($property);
+        $this->em->flush();
         return $this->render('pages/index.html.twig', [
             'current_menu' => 'home'
         ]);
