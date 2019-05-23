@@ -1,17 +1,27 @@
 <?php
 
-$term = $_GET['term']; //Term is a JS SuperGlobal var created by the autocomplete JS script
+#Faire les uses/namespaces;
+#Define Search v2 -> Done
+#Use SearchV2 with $term -> Done
+#Echo le tableau de retour (en JSON) -> Done
 
-
-$requete = $bdd->prepare('SELECT * FROM membres WHERE pseudo LIKE :term'); //Search in Database for keyword
-$requete->execute(array('term' => '%'.$term.'%'));
-$array = array();
-
-
-while($donnee = $requete->fetch()) {
-    array_push($array, $donnee['pseudo']);
+function searchBis(PropertyRepository $repository, string $query, string $term)
+{
+    $properties = $repository->findLatest();
+    dump($properties);
+    $this->em->flush();
+    $findProperties = array();
+    foreach ($properties as $value) {
+        if (strpos($value->getTitle(), $term) !== false) {
+            array_push($findProperties, $value);
+        }
+    }
+    unset($value);
+    echo json_encode($findProperties);
 }
 
-echo json_encode($array); //JSON conversion
-//replace membres and pseudo at l6 and l12
+$term = $_GET['term']; //Term is a JS SuperGlobal var created by the autocomplete JS script
+
+searchBis();
+
 ?>
