@@ -1,0 +1,7 @@
+{% extends "base.html.twig" %}
+{% block title 'EpiHub - Créer un article' %}
+{% block body %}
+    <div class="container mt-4">
+        {{ include ('pages/_form.html.twig', {form: form, button: 'Créer'}) }}
+    </div>
+{% endblock %}

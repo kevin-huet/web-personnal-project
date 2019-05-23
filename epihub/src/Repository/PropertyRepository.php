@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Property;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\QueryBuilder;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
@@ -19,11 +20,28 @@ class PropertyRepository extends ServiceEntityRepository
         parent::__construct($registry, Property::class);
     }
 
-    public function findAllVisible()
+    /**
+     * @return Property[]
+     */
+    public function findAllVisible(): array
     {
         return $this->createQueryBuilder('p')
             ->getQuery()
             ->getResult();
+    }
+
+    /**
+     * @return Property[]
+     */
+    public function findLatest(): array
+    {
+        return $this->findAllQuery()
+            ->getQuery()
+            ->getResult();
+    }
+
+    private function findAllQuery(): QueryBuilder {
+        return $this->createQueryBuilder('p');
     }
 
     // /**

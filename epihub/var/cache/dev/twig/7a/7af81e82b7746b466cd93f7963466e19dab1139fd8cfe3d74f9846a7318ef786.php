@@ -66,7 +66,7 @@ class __TwigTemplate_5a2a2597af83ddfb9ea5548b22b7f9ffaed16735290b0aac121fd4b4f5a
 
         <a class=\"navbar-brand\" href=\"/\">EpiHub</a>
         <div class=\"collapse navbar-collapse\" id=\"navbarNavDropdown\">
-          <ul class=\"navbar-nav\">
+          <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">
             <li class=\"nav-item ";
         // line 17
         if (((isset($context["current_menu"]) || array_key_exists("current_menu", $context)) && ((isset($context["current_menu"]) || array_key_exists("current_menu", $context) ? $context["current_menu"] : (function () { throw new RuntimeError('Variable "current_menu" does not exist.', 17, $this->source); })()) == "home"))) {
@@ -78,20 +78,26 @@ class __TwigTemplate_5a2a2597af83ddfb9ea5548b22b7f9ffaed16735290b0aac121fd4b4f5a
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">Accueil</a>
             </li>
+            <li class=\"nav-item\">
+              <a class=\"nav-link\" href=\"";
+        // line 21
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article");
+        echo "\">Articles</a>
+            </li>
             ";
-        // line 20
+        // line 23
         if ( !$this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
-            // line 21
+            // line 24
             echo "            <li class=\"nav-item ";
-            if (((isset($context["current_menu"]) || array_key_exists("current_menu", $context)) && ((isset($context["current_menu"]) || array_key_exists("current_menu", $context) ? $context["current_menu"] : (function () { throw new RuntimeError('Variable "current_menu" does not exist.', 21, $this->source); })()) == "register"))) {
+            if (((isset($context["current_menu"]) || array_key_exists("current_menu", $context)) && ((isset($context["current_menu"]) || array_key_exists("current_menu", $context) ? $context["current_menu"] : (function () { throw new RuntimeError('Variable "current_menu" does not exist.', 24, $this->source); })()) == "register"))) {
                 echo "active";
             }
             echo "\">
               <a class=\"nav-link\" href=\"/register\">Inscription</a>
             </li>
             <li class=\"nav-item ";
-            // line 24
-            if (((isset($context["current_menu"]) || array_key_exists("current_menu", $context)) && ((isset($context["current_menu"]) || array_key_exists("current_menu", $context) ? $context["current_menu"] : (function () { throw new RuntimeError('Variable "current_menu" does not exist.', 24, $this->source); })()) == "connexion"))) {
+            // line 27
+            if (((isset($context["current_menu"]) || array_key_exists("current_menu", $context)) && ((isset($context["current_menu"]) || array_key_exists("current_menu", $context) ? $context["current_menu"] : (function () { throw new RuntimeError('Variable "current_menu" does not exist.', 27, $this->source); })()) == "connexion"))) {
                 echo "active";
             }
             echo "\">
@@ -99,38 +105,55 @@ class __TwigTemplate_5a2a2597af83ddfb9ea5548b22b7f9ffaed16735290b0aac121fd4b4f5a
             </li>
             ";
         }
-        // line 28
+        // line 31
         echo "            ";
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
-            // line 29
+            // line 32
             echo "              <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-            // line 30
+            // line 33
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("profile");
             echo "\">            ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 30, $this->source); })()), "user", []), "username", []), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 33, $this->source); })()), "user", []), "username", []), "html", null, true);
             echo " </a>
               </li>
               <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-            // line 33
+            // line 36
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
             echo "\">Deconnexion</a>
               </li>
             ";
         }
-        // line 36
+        // line 39
         echo "          </ul>
+
+
+
+
+
+
+          <form class=\"form-inline my-2 my-lg-0\" action=\"search/\" method=\"post\">
+            <input class=\"form-control mr-sm-2\" name=\"query\" type=\"search\" placeholder=\"Rechercher\" aria-label=\"Search\">
+            <button class=\"btn btn-outline-primary my-2 my-sm-0\" type=\"submit\">Rechercher</button>
+          </form>
+
+
+
+
+
+
+
         </div>
         </div>
       </nav>
       ";
-        // line 40
+        // line 60
         $this->displayBlock('body', $context, $blocks);
-        // line 41
+        // line 61
         echo "      ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 42
+        // line 62
         echo "      <footer class=\"section footer-classic context-dark bg-image\" style=\"background: #343a40!important;\">
         <div class=\"container\">
           <div class=\"row row-30\">
@@ -173,6 +196,10 @@ class __TwigTemplate_5a2a2597af83ddfb9ea5548b22b7f9ffaed16735290b0aac121fd4b4f5a
           <div class=\"col\"><a class=\"social-inner\" href=\"#\"><span class=\"icon mdi mdi-youtube-play\"></span><span>google</span></a></div>
         </div>
       </footer>
+      <script src=\"";
+        // line 104
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/autocomplete.js"), "html", null, true);
+        echo "\"></script>
       <script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\" integrity=\"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN\" crossorigin=\"anonymous\"></script>
       <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\" integrity=\"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q\" crossorigin=\"anonymous\"></script>
       <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\" integrity=\"sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl\" crossorigin=\"anonymous\"></script>
@@ -222,7 +249,7 @@ class __TwigTemplate_5a2a2597af83ddfb9ea5548b22b7f9ffaed16735290b0aac121fd4b4f5a
 
     }
 
-    // line 40
+    // line 60
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -239,7 +266,7 @@ class __TwigTemplate_5a2a2597af83ddfb9ea5548b22b7f9ffaed16735290b0aac121fd4b4f5a
 
     }
 
-    // line 41
+    // line 61
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -268,7 +295,7 @@ class __TwigTemplate_5a2a2597af83ddfb9ea5548b22b7f9ffaed16735290b0aac121fd4b4f5a
 
     public function getDebugInfo()
     {
-        return array (  243 => 41,  226 => 40,  209 => 8,  191 => 7,  134 => 42,  131 => 41,  129 => 40,  123 => 36,  117 => 33,  109 => 30,  106 => 29,  103 => 28,  94 => 24,  85 => 21,  83 => 20,  78 => 18,  72 => 17,  62 => 9,  60 => 8,  56 => 7,  52 => 6,  45 => 1,);
+        return array (  270 => 61,  253 => 60,  236 => 8,  218 => 7,  201 => 104,  157 => 62,  154 => 61,  152 => 60,  129 => 39,  123 => 36,  115 => 33,  112 => 32,  109 => 31,  100 => 27,  91 => 24,  89 => 23,  84 => 21,  78 => 18,  72 => 17,  62 => 9,  60 => 8,  56 => 7,  52 => 6,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -288,9 +315,12 @@ class __TwigTemplate_5a2a2597af83ddfb9ea5548b22b7f9ffaed16735290b0aac121fd4b4f5a
 
         <a class=\"navbar-brand\" href=\"/\">EpiHub</a>
         <div class=\"collapse navbar-collapse\" id=\"navbarNavDropdown\">
-          <ul class=\"navbar-nav\">
+          <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">
             <li class=\"nav-item {% if current_menu is defined and current_menu == 'home' %}active{% endif %}\">
               <a class=\"nav-link\" href=\"{{ path('home') }}\">Accueil</a>
+            </li>
+            <li class=\"nav-item\">
+              <a class=\"nav-link\" href=\"{{ path('article') }}\">Articles</a>
             </li>
             {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
             <li class=\"nav-item {% if current_menu is defined and current_menu == 'register' %}active{% endif %}\">
@@ -309,6 +339,23 @@ class __TwigTemplate_5a2a2597af83ddfb9ea5548b22b7f9ffaed16735290b0aac121fd4b4f5a
               </li>
             {% endif %}
           </ul>
+
+
+
+
+
+
+          <form class=\"form-inline my-2 my-lg-0\" action=\"search/\" method=\"post\">
+            <input class=\"form-control mr-sm-2\" name=\"query\" type=\"search\" placeholder=\"Rechercher\" aria-label=\"Search\">
+            <button class=\"btn btn-outline-primary my-2 my-sm-0\" type=\"submit\">Rechercher</button>
+          </form>
+
+
+
+
+
+
+
         </div>
         </div>
       </nav>
@@ -356,6 +403,7 @@ class __TwigTemplate_5a2a2597af83ddfb9ea5548b22b7f9ffaed16735290b0aac121fd4b4f5a
           <div class=\"col\"><a class=\"social-inner\" href=\"#\"><span class=\"icon mdi mdi-youtube-play\"></span><span>google</span></a></div>
         </div>
       </footer>
+      <script src=\"{{ asset('js/autocomplete.js') }}\"></script>
       <script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\" integrity=\"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN\" crossorigin=\"anonymous\"></script>
       <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\" integrity=\"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q\" crossorigin=\"anonymous\"></script>
       <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\" integrity=\"sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl\" crossorigin=\"anonymous\"></script>

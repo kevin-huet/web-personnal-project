@@ -103,6 +103,7 @@ class ComposerStaticInita443e710dbb0e6e03ec5ba4e89b89cba
             'Psr\\Cache\\' => 10,
             'PhpParser\\' => 10,
             'PackageVersions\\' => 16,
+            'PUGX\\AutocompleterBundle\\' => 25,
         ),
         'M' => 
         array (
@@ -132,6 +133,10 @@ class ComposerStaticInita443e710dbb0e6e03ec5ba4e89b89cba
             'Doctrine\\Bundle\\MigrationsBundle\\' => 33,
             'Doctrine\\Bundle\\DoctrineCacheBundle\\' => 36,
             'Doctrine\\Bundle\\DoctrineBundle\\' => 31,
+        ),
+        'C' => 
+        array (
+            'Cocur\\Slugify\\' => 14,
         ),
         'A' => 
         array (
@@ -419,6 +424,10 @@ class ComposerStaticInita443e710dbb0e6e03ec5ba4e89b89cba
         array (
             0 => __DIR__ . '/..' . '/ocramius/package-versions/src/PackageVersions',
         ),
+        'PUGX\\AutocompleterBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/pugx/autocompleter-bundle/src',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
@@ -489,6 +498,10 @@ class ComposerStaticInita443e710dbb0e6e03ec5ba4e89b89cba
         'Doctrine\\Bundle\\DoctrineBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/doctrine-bundle',
+        ),
+        'Cocur\\Slugify\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/cocur/slugify/src',
         ),
         'App\\Tests\\' => 
         array (

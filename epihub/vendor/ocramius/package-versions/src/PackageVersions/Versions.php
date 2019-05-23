@@ -14,6 +14,7 @@ final class Versions
 {
     public const ROOT_PACKAGE_NAME = '__root__';
     public const VERSIONS          = array (
+  'cocur/slugify' => 'v3.2@d41701efe58ba2df9cae029c3d21e1518cc6780e',
   'doctrine/annotations' => 'v1.6.1@53120e0eb10355388d6ccbe462f1fea34ddadb24',
   'doctrine/cache' => 'v1.8.0@d768d58baee9a4862ca783840eca1b9add7a7f57',
   'doctrine/collections' => 'v1.6.1@d2ae4ef05e25197343b6a39bae1d3c427a2f6956',
@@ -44,6 +45,7 @@ final class Versions
   'psr/link' => '1.0.0@eea8e8662d5cd3ae4517c9b864493f59fca95562',
   'psr/log' => '1.1.0@6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd',
   'psr/simple-cache' => '1.0.1@408d5eafb83c57f6365a3ca330ff23aa4a5fa39b',
+  'pugx/autocompleter-bundle' => 'v1.4.2@dc85f39e70dfc2f2dbc01314bccb90a8bd728f47',
   'sensio/framework-extra-bundle' => 'v5.3.1@5f75c4658b03301cba17baa15a840b57b72b4262',
   'swiftmailer/swiftmailer' => 'v6.2.0@6fa3232ff9d3f8237c0fae4b7ff05e1baa4cd707',
   'symfony/asset' => 'v4.2.7@7eee96a8630f9448304ae4f0e3b474ea4e033664',
