@@ -81,29 +81,34 @@ class __TwigTemplate_599bb56168cc07df0a3e838dd63c6d3dc87383bf94c6b3bcca857b1f0f2
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<div class=\"container-fluid h-100\">
+        echo "<div class=\"container-fluid h-100\" style=\"margin-top: 5%; margin-bottom: 5%\">
     <div class=\"row justify-content-center align-items-center h-100\">
         <div class=\"col col-sm-6 col-md-6 col-lg-4 col-xl-3\">
-    <h1>Register</h1>
-
+            <div class=\"card\">
+                <div class=\"card-header\">
+                    <h2>Inscription</h2>
+                </div>
+                <div class=\"card-body\">
     ";
-        // line 11
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 11, $this->source); })()), 'form_start');
+        // line 14
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 14, $this->source); })()), 'form_start');
         echo "
         ";
-        // line 12
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 12, $this->source); })()), "email", []), 'row');
+        // line 15
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 15, $this->source); })()), "email", []), 'row');
         echo "
         ";
-        // line 13
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 13, $this->source); })()), "plainPassword", []), 'row');
-        echo "
-
-        <button class=\"btn\">Register</button>
-    ";
         // line 16
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 16, $this->source); })()), 'form_end');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 16, $this->source); })()), "plainPassword", []), 'row');
         echo "
+
+        <button class=\"btn btn-primary\">Register</button>
+    ";
+        // line 19
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 19, $this->source); })()), 'form_end');
+        echo "
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -128,7 +133,7 @@ class __TwigTemplate_599bb56168cc07df0a3e838dd63c6d3dc87383bf94c6b3bcca857b1f0f2
 
     public function getDebugInfo()
     {
-        return array (  105 => 16,  99 => 13,  95 => 12,  91 => 11,  84 => 6,  75 => 5,  57 => 3,  27 => 1,);
+        return array (  108 => 19,  102 => 16,  98 => 15,  94 => 14,  84 => 6,  75 => 5,  57 => 3,  27 => 1,);
     }
 
     public function getSourceContext()
@@ -138,17 +143,22 @@ class __TwigTemplate_599bb56168cc07df0a3e838dd63c6d3dc87383bf94c6b3bcca857b1f0f2
 {% block title %}Inscription{% endblock %}
 
 {% block body %}
-<div class=\"container-fluid h-100\">
+<div class=\"container-fluid h-100\" style=\"margin-top: 5%; margin-bottom: 5%\">
     <div class=\"row justify-content-center align-items-center h-100\">
         <div class=\"col col-sm-6 col-md-6 col-lg-4 col-xl-3\">
-    <h1>Register</h1>
-
+            <div class=\"card\">
+                <div class=\"card-header\">
+                    <h2>Inscription</h2>
+                </div>
+                <div class=\"card-body\">
     {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.email) }}
         {{ form_row(registrationForm.plainPassword) }}
 
-        <button class=\"btn\">Register</button>
+        <button class=\"btn btn-primary\">Register</button>
     {{ form_end(registrationForm) }}
+                </div>
+            </div>
         </div>
     </div>
 </div>

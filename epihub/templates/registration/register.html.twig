@@ -3,17 +3,22 @@
 {% block title %}Inscription{% endblock %}
 
 {% block body %}
-<div class="container-fluid h-100">
+<div class="container-fluid h-100" style="margin-top: 5%; margin-bottom: 5%">
     <div class="row justify-content-center align-items-center h-100">
         <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
-    <h1>Register</h1>
-
+            <div class="card">
+                <div class="card-header">
+                    <h2>Inscription</h2>
+                </div>
+                <div class="card-body">
     {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.email) }}
         {{ form_row(registrationForm.plainPassword) }}
 
-        <button class="btn">Register</button>
+        <button class="btn btn-primary">Register</button>
     {{ form_end(registrationForm) }}
+                </div>
+            </div>
         </div>
     </div>
 </div>

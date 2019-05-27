@@ -133,8 +133,11 @@ class __TwigTemplate_5a2a2597af83ddfb9ea5548b22b7f9ffaed16735290b0aac121fd4b4f5a
 
 
 
-          <form class=\"form-inline my-2 my-lg-0\" action=\"search/\" method=\"post\">
-            <input class=\"form-control mr-sm-2\" name=\"query\" type=\"search\" placeholder=\"Rechercher\" aria-label=\"Search\">
+          <form class=\"form-inline my-2 my-lg-0\" action=\"";
+        // line 46
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("search");
+        echo "\" method=\"post\">
+            <input class=\"form-control mr-sm-2\" id=\"searchbar\" name=\"query\" type=\"search\" placeholder=\"Rechercher\" aria-label=\"Search\">
             <button class=\"btn btn-outline-primary my-2 my-sm-0\" type=\"submit\">Rechercher</button>
           </form>
 
@@ -295,7 +298,7 @@ class __TwigTemplate_5a2a2597af83ddfb9ea5548b22b7f9ffaed16735290b0aac121fd4b4f5a
 
     public function getDebugInfo()
     {
-        return array (  270 => 61,  253 => 60,  236 => 8,  218 => 7,  201 => 104,  157 => 62,  154 => 61,  152 => 60,  129 => 39,  123 => 36,  115 => 33,  112 => 32,  109 => 31,  100 => 27,  91 => 24,  89 => 23,  84 => 21,  78 => 18,  72 => 17,  62 => 9,  60 => 8,  56 => 7,  52 => 6,  45 => 1,);
+        return array (  273 => 61,  256 => 60,  239 => 8,  221 => 7,  204 => 104,  160 => 62,  157 => 61,  155 => 60,  138 => 46,  129 => 39,  123 => 36,  115 => 33,  112 => 32,  109 => 31,  100 => 27,  91 => 24,  89 => 23,  84 => 21,  78 => 18,  72 => 17,  62 => 9,  60 => 8,  56 => 7,  52 => 6,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -345,8 +348,8 @@ class __TwigTemplate_5a2a2597af83ddfb9ea5548b22b7f9ffaed16735290b0aac121fd4b4f5a
 
 
 
-          <form class=\"form-inline my-2 my-lg-0\" action=\"search/\" method=\"post\">
-            <input class=\"form-control mr-sm-2\" name=\"query\" type=\"search\" placeholder=\"Rechercher\" aria-label=\"Search\">
+          <form class=\"form-inline my-2 my-lg-0\" action=\"{{ path('search') }}\" method=\"post\">
+            <input class=\"form-control mr-sm-2\" id=\"searchbar\" name=\"query\" type=\"search\" placeholder=\"Rechercher\" aria-label=\"Search\">
             <button class=\"btn btn-outline-primary my-2 my-sm-0\" type=\"submit\">Rechercher</button>
           </form>
 

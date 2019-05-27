@@ -37,7 +37,7 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'article.delete' => [['id'], ['_controller' => 'App\\Controller\\ArticleController::DELETE'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/article/delete']], [], []],
         'article' => [[], ['_controller' => 'App\\Controller\\HomeController::article'], [], [['text', '/article']], [], []],
         'article.show' => [['slug', 'id'], ['_controller' => 'App\\Controller\\HomeController::show'], ['slug' => '[a-z0-9\\-]*'], [['variable', '-', '[^/]++', 'id', true], ['variable', '/', '[a-z0-9\\-]*', 'slug', true], ['text', '/article']], [], []],
-        'search' => [['query'], ['_controller' => 'App\\Controller\\HomeController::search'], [], [['variable', '/', '[^/]++', 'query', true], ['text', '/search']], [], []],
+        'search' => [[], ['_controller' => 'App\\Controller\\HomeController::search'], [], [['text', '/search']], [], []],
         'admin' => [[], ['_controller' => 'App\\Controller\\HomeController::admin'], [], [['text', '/admin']], [], []],
         'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], []],
         'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],

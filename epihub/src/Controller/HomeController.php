@@ -44,10 +44,6 @@ class HomeController extends AbstractController
      */
     public function article(PropertyRepository $repository): Response
     {
-        //$repository = $this->getDoctrine()->getRepository(Property::class);
-        //dump($repository);
-        //$property = $this->repository->findAllVisible();
-
         $properties = $repository->findLatest();
         dump($properties);
         $this->em->flush();
@@ -85,17 +81,22 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/search/{query}", name="search", methods="POST|GET")
+     * @Route("/search", name="search", methods="POST|GET")
      * @param PropertyRepository $repository
-     * @param string $query
+     * @param Request $request
      * @return Response
      */
-    public function search(PropertyRepository $repository, string $query)
+    public function search(PropertyRepository $repository, Request $request)
     {
         $properties = $repository->findLatest();
         dump($properties);
         $this->em->flush();
         $findProperties = array();
+        $query = $request->request->get("query");
+        if (!$query)
+            return $this->render('pages/search.html.twig', [
+                'properties' => $findProperties
+            ]);
         foreach ($properties as $value) {
             if (strpos($value->getTitle(), $query) !== false) {
                 array_push($findProperties, $value);

@@ -1,6 +1,16 @@
 {% extends "base.html.twig" %}
 {% block title 'EpiHub - Articles' %}
 {% block body %}
+    <div class="jumbotron" style="margin-bottom: 0;">
+        <div class="container">
+            <h1 class="display-4">Recherche...</h1>
+            <p class="lead">Liste des résultats trouvés </p>
+            <hr class="my-4">
+            <div class="spinner-grow text-dark"></div>
+            <div class="spinner-grow text-dark"></div>
+            <div class="spinner-grow text-dark"></div>
+        </div>
+    </div>
     <div class="container" style="margin-top: 5%; margin-bottom: 5%">
         <div class="list-group">
             {%  for property in properties %}

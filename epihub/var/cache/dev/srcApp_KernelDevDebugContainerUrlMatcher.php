@@ -22,6 +22,7 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
             '/article/create' => [[['_route' => 'article.create', '_controller' => 'App\\Controller\\ArticleController::new'], null, null, null, false, false, null]],
             '/article' => [[['_route' => 'article', '_controller' => 'App\\Controller\\HomeController::article'], null, null, null, false, false, null]],
+            '/search' => [[['_route' => 'search', '_controller' => 'App\\Controller\\HomeController::search'], null, ['POST' => 0, 'GET' => 1], null, false, false, null]],
             '/admin' => [[['_route' => 'admin', '_controller' => 'App\\Controller\\HomeController::admin'], null, null, null, false, false, null]],
             '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
             '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
@@ -51,7 +52,6 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
                         .'|delete/([^/]++)(*:218)'
                         .'|([a-z0-9\\-]*)\\-([^/]++)(*:249)'
                     .')'
-                    .'|/search/([^/]++)(*:274)'
                 .')/?$}sDu',
         ];
         $this->dynamicRoutes = [
@@ -65,7 +65,6 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             183 => [[['_route' => 'article.edit', '_controller' => 'App\\Controller\\ArticleController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
             218 => [[['_route' => 'article.delete', '_controller' => 'App\\Controller\\ArticleController::DELETE'], ['id'], null, null, false, true, null]],
             249 => [[['_route' => 'article.show', '_controller' => 'App\\Controller\\HomeController::show'], ['slug', 'id'], null, null, false, true, null]],
-            274 => [[['_route' => 'search', '_controller' => 'App\\Controller\\HomeController::search'], ['query'], ['POST' => 0, 'GET' => 1], null, false, true, null]],
         ];
     }
 }
