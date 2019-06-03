@@ -23,8 +23,8 @@ class __TwigTemplate_7d1f7088871b35ddd3d145b2cf17931a840643fb519824f9c0974858d50
 
         $this->source = $this->getSourceContext();
 
-        // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", "pages/profile.html.twig", 1);
+        // line 4
+        $this->parent = $this->loadTemplate("base.html.twig", "pages/profile.html.twig", 4);
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
@@ -44,6 +44,15 @@ class __TwigTemplate_7d1f7088871b35ddd3d145b2cf17931a840643fb519824f9c0974858d50
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "pages/profile.html.twig"));
 
+        // line 1
+        ob_start();
+        // line 2
+        echo "  ";
+        echo twig_escape_filter($this->env, (isset($context["cms"]) || array_key_exists("cms", $context) ? $context["cms"] : (function () { throw new RuntimeError('Variable "cms" does not exist.', 2, $this->source); })()), "html", null, true);
+        echo "
+";
+        $context["name"] = ('' === $tmp = ob_get_clean()) ? '' : new Markup($tmp, $this->env->getCharset());
+        // line 4
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -53,7 +62,7 @@ class __TwigTemplate_7d1f7088871b35ddd3d145b2cf17931a840643fb519824f9c0974858d50
 
     }
 
-    // line 2
+    // line 5
     public function block_title($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -71,7 +80,7 @@ class __TwigTemplate_7d1f7088871b35ddd3d145b2cf17931a840643fb519824f9c0974858d50
 
     }
 
-    // line 3
+    // line 6
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -80,16 +89,16 @@ class __TwigTemplate_7d1f7088871b35ddd3d145b2cf17931a840643fb519824f9c0974858d50
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 4
+        // line 7
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
-            // line 5
+            // line 8
             echo "<div class=\"container\">
 <div class=\"card\" style=\"width:400px\">
   <img class=\"card-img-top\" src=\"https://www.w3schools.com/bootstrap4/img_avatar3.png\" alt=\"Card image\">
   <div class=\"card-body\">
     <h4 class=\"card-title\">";
-            // line 9
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 9, $this->source); })()), "user", []), "username", []), "html", null, true);
+            // line 12
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "user", []), "username", []), "html", null, true);
             echo "</h4>
     <p class=\"card-text\">bla bla bla</p>
     <a href=\"#\" class=\"btn btn-primary\">Test</a>
@@ -118,12 +127,15 @@ class __TwigTemplate_7d1f7088871b35ddd3d145b2cf17931a840643fb519824f9c0974858d50
 
     public function getDebugInfo()
     {
-        return array (  92 => 9,  86 => 5,  84 => 4,  75 => 3,  57 => 2,  27 => 1,);
+        return array (  101 => 12,  95 => 8,  93 => 7,  84 => 6,  66 => 5,  56 => 4,  50 => 2,  48 => 1,  27 => 4,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends \"base.html.twig\" %}
+        return new Source("{% set name  %}
+  {{ cms }}
+{% endset %}
+{% extends \"base.html.twig\" %}
 {% block title 'EpiHub - Profile' %}
 {% block body %}
 {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}

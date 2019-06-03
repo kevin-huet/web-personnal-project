@@ -1,7 +1,24 @@
+{% set name  %}
+    {{ cms }}
+{% endset %}
 {% extends "base.html.twig" %}
 {% block title 'EpiHub - Créer un article' %}
 {% block body %}
-    <div class="container mt-4">
-        {{ include ('pages/_form.html.twig', {form: form, button: 'Créer'}) }}
+<div class="container-fluid h-100" style="margin-top: 5%; margin-bottom: 5%">
+    <div class="row justify-content-center align-items-center h-100">
+        <div class="col col-sm-6 col-md-10 col-lg-10 col-xl-8">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Créer un article</h2>
+                </div>
+                <div class="card-body">
+                	{{ include ('pages/_form.html.twig', {form: form, button: 'Créer'}) }}
+                	    </div>
+
+    </div>
+
+    </div>
+
+    </div>
     </div>
 {% endblock %}

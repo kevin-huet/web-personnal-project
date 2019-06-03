@@ -1,0 +1,54 @@
+{% extends "baseAdmin.html.twig" %}
+{% block title 'AdminHub - List user' %}
+{% block body %}
+    {% if is_granted('ROLE_ADMIN') %}
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">Admin IF</h1>
+            <p class="lead">Interface Admin.</p>
+            <hr class="my-4">
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="{{ path('home') }}" role="button">Retour au site</a>
+            </p>
+        </div>
+    </div>
+        <div class="container">
+        <div class="row" style="margin-bottom: 2rem">
+            <div class="col-md-6">
+                <div class="card mdb-color lighten-2 text-center z-depth-2">
+
+                    <div class="card-body">
+                        <h4 class="card-title">Paramètres site</h4>
+                        <hr>
+                        <a href="{{ path('admin.edit', {id: 1}) }}"><p class="white-text mb-0">Editer les informations du site</p></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mdb-color lighten-2 text-center z-depth-2">
+
+                    <div class="card-body">
+                        <h4 class="card-title">Paramètres utilisateurs</h4>
+                        <hr>
+                        <p class="white-text mb-0"> test</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="row" style="margin-bottom: 2rem">
+                <div class="col-md-6">
+                    <div class="card mdb-color lighten-2 text-center z-depth-2">
+
+                        <div class="card-body">
+                            <h4 class="card-title">Paramètres Admin</h4>
+                            <hr>
+                            <a href="#"><p class="white-text mb-0">Editer</p></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    {% endif %}
+{% endblock %}

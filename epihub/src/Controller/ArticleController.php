@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Entity\Property;
+use App\Repository\CmsTextRepository;
 use App\Repository\PropertyRepository;
 use App\Form\PropertyType;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -21,10 +22,12 @@ class ArticleController extends AbstractController {
      */
     private $em;
 
-    public function __construct(PropertyRepository $repository, ObjectManager $em)
+    public function __construct(PropertyRepository $repository, CmsTextRepository $cms, ObjectManager $em)
     {
         $this->repository = $repository;
+        $this->cms = $cms;
         $this->em = $em;
+        $this->name = $cms->findAllCms()[0]->getSiteName();
     }
 
     /**
@@ -52,6 +55,7 @@ class ArticleController extends AbstractController {
             return $this->redirectToRoute('article');
         }
         return $this->render('pages/editArticle.html.twig', [
+            'cms' => $this->name,
             'property' => $property,
             'form' => $form->createView()
         ]);
@@ -72,6 +76,7 @@ class ArticleController extends AbstractController {
             return $this->redirectToRoute('article');
         }
         return $this->render('pages/createArticle.html.twig', [
+            'cms' => $this->name,
             'property' => $property,
             'form' => $form->createView()
         ]);

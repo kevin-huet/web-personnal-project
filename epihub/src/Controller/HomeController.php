@@ -2,11 +2,12 @@
 
 namespace App\Controller;
 
-use App\Entity\Epihub;
 use App\Entity\Property;
+use App\Repository\CmsTextRepository;
 use App\Repository\PropertyRepository;
 use App\Form\RegisterFormType;
 use App\Form\LoginFormType;
+use App\Repository\UserRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,10 +21,13 @@ class HomeController extends AbstractController
      */
     private $em;
 
-    public function __construct(PropertyRepository $repository, ObjectManager $em)
+    public function __construct(PropertyRepository $repository, CmsTextRepository $cms, UserRepository $userRepo, ObjectManager $em)
     {
         $this->repository = $repository;
+        $this->userRepo = $userRepo;
+        $this->cms = $cms;
         $this->em = $em;
+        $this->name = $cms->findAllCms()[0]->getSiteName();
     }
 
     /**
@@ -33,8 +37,8 @@ class HomeController extends AbstractController
     public function index(): Response
     {
         return $this->render('pages/index.html.twig', [
-            'current_menu' => 'home'
-        ]);
+            'cms' => $this->name,
+            'current_menu' => 'home']);
     }
 
     /**
@@ -45,9 +49,8 @@ class HomeController extends AbstractController
     public function article(PropertyRepository $repository): Response
     {
         $properties = $repository->findLatest();
-        dump($properties);
-        $this->em->flush();
         return $this->render('pages/article.html.twig', [
+            'cms' => $this->name,
             'properties' => $properties
         ]);
     }
@@ -62,10 +65,12 @@ class HomeController extends AbstractController
     {
         if ($property->getSlug() !== $slug)
             $this->redirectToRoute('article.show', [
+                'cms' => $this->name,
                 'id' => $property->getId(),
                 'slug' => $property->getSlug()
                 ], 301);
         return $this->render('pages/show.html.twig', [
+            'cms' => $this->name,
             'property' => $property,
             'current_menu' => 'properties'
         ]);
@@ -77,7 +82,9 @@ class HomeController extends AbstractController
      */
     public function profile(): Response
     {
-        return $this->render('pages/profile.html.twig');
+        return $this->render('pages/profile.html.twig', [
+            'cms' => $this->name
+        ]);
     }
 
     /**
@@ -95,6 +102,7 @@ class HomeController extends AbstractController
         $query = $request->request->get("query");
         if (!$query)
             return $this->render('pages/search.html.twig', [
+                'cms' => $this->name,
                 'properties' => $findProperties
             ]);
         foreach ($properties as $value) {
@@ -104,17 +112,9 @@ class HomeController extends AbstractController
         }
         unset($value);
         return $this->render('pages/search.html.twig', [
+            'cms' => $this->name,
             'properties' => $findProperties
         ]);
-    }
-
-    /**
-     * @Route("/admin", name="admin")
-     * @return Response
-     */
-    public function admin(): Response
-    {
-        return $this->render('admin.html.twig');
     }
 }
 

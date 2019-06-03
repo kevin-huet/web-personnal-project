@@ -1,3 +1,3 @@
-$('#searchbar').autocomplete({
-    source: "{{ path('autocomplete') }}"
+$('#search').autocomplete({
+	source : ''
 });

@@ -1,0 +1,12 @@
+{% extends "baseAdmin.html.twig" %}
+{% block title 'AdminHub' %}
+{% block body %}
+    <div class="container mt-4">
+    <div class="card mdb-color lighten-2 z-depth-2" style="margin-bottom: 2rem">
+
+    <div class="card-body">
+        {{ include ('pages/_form.html.twig', {form: form, button: 'Editer'}) }}
+    </div>
+    </div>
+    </div>
+{% endblock %}

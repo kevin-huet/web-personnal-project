@@ -23,8 +23,8 @@ class __TwigTemplate_6808218615993cddba13e3e215c63ba0bdeab297607e2204d4daa80db74
 
         $this->source = $this->getSourceContext();
 
-        // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", "pages/index.html.twig", 1);
+        // line 4
+        $this->parent = $this->loadTemplate("base.html.twig", "pages/index.html.twig", 4);
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
@@ -44,6 +44,15 @@ class __TwigTemplate_6808218615993cddba13e3e215c63ba0bdeab297607e2204d4daa80db74
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "pages/index.html.twig"));
 
+        // line 1
+        ob_start();
+        // line 2
+        echo "    ";
+        echo twig_escape_filter($this->env, (isset($context["cms"]) || array_key_exists("cms", $context) ? $context["cms"] : (function () { throw new RuntimeError('Variable "cms" does not exist.', 2, $this->source); })()), "html", null, true);
+        echo "
+";
+        $context["name"] = ('' === $tmp = ob_get_clean()) ? '' : new Markup($tmp, $this->env->getCharset());
+        // line 4
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -53,7 +62,7 @@ class __TwigTemplate_6808218615993cddba13e3e215c63ba0bdeab297607e2204d4daa80db74
 
     }
 
-    // line 2
+    // line 5
     public function block_title($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -71,7 +80,7 @@ class __TwigTemplate_6808218615993cddba13e3e215c63ba0bdeab297607e2204d4daa80db74
 
     }
 
-    // line 3
+    // line 6
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -80,24 +89,14 @@ class __TwigTemplate_6808218615993cddba13e3e215c63ba0bdeab297607e2204d4daa80db74
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 4
-        if (((isset($context["registerValue"]) || array_key_exists("registerValue", $context)) && ((isset($context["registerValue"]) || array_key_exists("registerValue", $context) ? $context["registerValue"] : (function () { throw new RuntimeError('Variable "registerValue" does not exist.', 4, $this->source); })()) == "success"))) {
-            // line 5
-            echo "<div class=\"alert alert-success\">
-  <strong>Success!</strong> Indicates a successful or positive action.
-</div>
-";
-        }
-        // line 9
-        echo "
-<div class=\"jumbotron\" style=\"margin-bottom: 0;\">
+        // line 7
+        echo "<div class=\"jumbotron\" style=\"margin-bottom: 0;\">
   <div class=\"container\">
   <h1 class=\"display-4\">Bienvenue sur EpiHub</h1>
-  <p class=\"lead\">La plarteforme Epitech qui répertorie les informations liées au Hub</p>
+  <p class=\"lead\">La plateforme Epitech qui répertorie les informations liées au Hub</p>
   <hr class=\"my-4\">
-  <p>Besoin d'aide pour la réalisation du projet ou à l'inverse besoin d'un projet sur lequel travailler ?<br />
-  Vous êtes donc au bon endroit !</p>
-<button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal\">
+  <p></p>
+  <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal\">
     En savoir plus
 </button>
 </div>
@@ -125,17 +124,26 @@ class __TwigTemplate_6808218615993cddba13e3e215c63ba0bdeab297607e2204d4daa80db74
     <div class=\"row mt-5 justify-content-center\">
         <div class=\"card card-custom mx-2 mb-3\">
             <a href=\"#\">
-               <img src=\"https://movilab.org/images/movilab/thumb/0/0d/Codecademy-2.jpg/300px-Codecademy-2.jpg\" alt=\"\" class=\"card-img\" style=\"max-height: 300px; max-width: 300px\">
+               <img src=\"";
+        // line 41
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/home_square1.jpg"), "html", null, true);
+        echo "\" alt=\"\" class=\"card-img\" style=\"max-height: 300px; max-width: 300px\">
            </a>
         </div>
                 <div class=\"card card-custom mx-2 mb-3\">
             <a href=\"#\">
-               <img src=\"https://www.1pacte-formation.fr/wp-content/uploads/formation-en-informatique-technique_F-71506459_S.jpg\" alt=\"\" class=\"card-img\" style=\"max-height: 300px; max-width: 300px\">
+               <img src=\"";
+        // line 46
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/home_square2.jpg"), "html", null, true);
+        echo "\" alt=\"\" class=\"card-img\" style=\"max-height: 300px; max-width: 300px\">
            </a>
         </div>
                 <div class=\"card card-custom mx-2 mb-3\">
             <a href=\"#\">
-               <img src=\"http://beetechnology.fr/wordpress/wp-content/uploads/2016/06/computer-coding-1-300x300.jpg\" alt=\"\" class=\"card-img\" style=\"max-height: 300px; max-width: 300px\">
+               <img src=\"";
+        // line 51
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/home_square3.jpg"), "html", null, true);
+        echo "\" alt=\"\" class=\"card-img\" style=\"max-height: 300px; max-width: 300px\">
            </a>
         </div>
 </div>
@@ -163,28 +171,24 @@ class __TwigTemplate_6808218615993cddba13e3e215c63ba0bdeab297607e2204d4daa80db74
 
     public function getDebugInfo()
     {
-        return array (  92 => 9,  86 => 5,  84 => 4,  75 => 3,  57 => 2,  27 => 1,);
+        return array (  145 => 51,  137 => 46,  129 => 41,  93 => 7,  84 => 6,  66 => 5,  56 => 4,  50 => 2,  48 => 1,  27 => 4,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends \"base.html.twig\" %}
+        return new Source("{% set name  %}
+    {{ cms }}
+{% endset %}
+{% extends \"base.html.twig\" %}
 {% block title 'EpiHub - Accueil' %}
 {% block body %}
-{% if registerValue is defined and registerValue == 'success' %}
-<div class=\"alert alert-success\">
-  <strong>Success!</strong> Indicates a successful or positive action.
-</div>
-{% endif %}
-
 <div class=\"jumbotron\" style=\"margin-bottom: 0;\">
   <div class=\"container\">
   <h1 class=\"display-4\">Bienvenue sur EpiHub</h1>
-  <p class=\"lead\">La plarteforme Epitech qui répertorie les informations liées au Hub</p>
+  <p class=\"lead\">La plateforme Epitech qui répertorie les informations liées au Hub</p>
   <hr class=\"my-4\">
-  <p>Besoin d'aide pour la réalisation du projet ou à l'inverse besoin d'un projet sur lequel travailler ?<br />
-  Vous êtes donc au bon endroit !</p>
-<button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal\">
+  <p></p>
+  <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModal\">
     En savoir plus
 </button>
 </div>
@@ -212,17 +216,17 @@ class __TwigTemplate_6808218615993cddba13e3e215c63ba0bdeab297607e2204d4daa80db74
     <div class=\"row mt-5 justify-content-center\">
         <div class=\"card card-custom mx-2 mb-3\">
             <a href=\"#\">
-               <img src=\"https://movilab.org/images/movilab/thumb/0/0d/Codecademy-2.jpg/300px-Codecademy-2.jpg\" alt=\"\" class=\"card-img\" style=\"max-height: 300px; max-width: 300px\">
+               <img src=\"{{ asset('images/home_square1.jpg') }}\" alt=\"\" class=\"card-img\" style=\"max-height: 300px; max-width: 300px\">
            </a>
         </div>
                 <div class=\"card card-custom mx-2 mb-3\">
             <a href=\"#\">
-               <img src=\"https://www.1pacte-formation.fr/wp-content/uploads/formation-en-informatique-technique_F-71506459_S.jpg\" alt=\"\" class=\"card-img\" style=\"max-height: 300px; max-width: 300px\">
+               <img src=\"{{ asset('images/home_square2.jpg') }}\" alt=\"\" class=\"card-img\" style=\"max-height: 300px; max-width: 300px\">
            </a>
         </div>
                 <div class=\"card card-custom mx-2 mb-3\">
             <a href=\"#\">
-               <img src=\"http://beetechnology.fr/wordpress/wp-content/uploads/2016/06/computer-coding-1-300x300.jpg\" alt=\"\" class=\"card-img\" style=\"max-height: 300px; max-width: 300px\">
+               <img src=\"{{ asset('images/home_square3.jpg') }}\" alt=\"\" class=\"card-img\" style=\"max-height: 300px; max-width: 300px\">
            </a>
         </div>
 </div>

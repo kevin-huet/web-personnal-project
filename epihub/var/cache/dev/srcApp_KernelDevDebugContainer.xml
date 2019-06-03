@@ -398,10 +398,21 @@
     <service id="EasyCorp\EasyLog\EasyLogHandler" class="EasyCorp\EasyLog\EasyLogHandler" public="false">
       <argument>/Library/WebServer/Documents/epihub/var/log/dev.log</argument>
     </service>
+    <service id="App\Controller\AdminController" class="App\Controller\AdminController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="App\Repository\PropertyRepository"/>
+      <argument type="service" id="App\Repository\UserRepository"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.KTVqfp6.App\Controller\AdminController"/>
+      </call>
+    </service>
     <service id="App\Controller\ArticleController" class="App\Controller\ArticleController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <argument type="service" id="App\Repository\PropertyRepository"/>
+      <argument type="service" id="App\Repository\CmsTextRepository"/>
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.KTVqfp6.App\Controller\ArticleController"/>
@@ -411,6 +422,8 @@
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <argument type="service" id="App\Repository\PropertyRepository"/>
+      <argument type="service" id="App\Repository\CmsTextRepository"/>
+      <argument type="service" id="App\Repository\UserRepository"/>
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.KTVqfp6.App\Controller\HomeController"/>
@@ -419,6 +432,7 @@
     <service id="App\Controller\RegistrationController" class="App\Controller\RegistrationController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
+      <argument type="service" id="App\Repository\CmsTextRepository"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.KTVqfp6.App\Controller\RegistrationController"/>
       </call>
@@ -426,9 +440,13 @@
     <service id="App\Controller\SecurityController" class="App\Controller\SecurityController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
+      <argument type="service" id="App\Repository\CmsTextRepository"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.KTVqfp6.App\Controller\SecurityController"/>
       </call>
+    </service>
+    <service id="App\Form\CmsTextType" class="App\Form\CmsTextType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
     </service>
     <service id="App\Form\PropertyType" class="App\Form\PropertyType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
@@ -438,6 +456,10 @@
     </service>
     <service id="App\Form\SearchType" class="App\Form\SearchType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
+    </service>
+    <service id="App\Repository\CmsTextRepository" class="App\Repository\CmsTextRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\EpihubRepository" class="App\Repository\EpihubRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
@@ -719,6 +741,7 @@
         <argument></argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\CmsTextType</argument>
         <argument>App\Form\PropertyType</argument>
         <argument>App\Form\RegistrationFormType</argument>
         <argument>App\Form\SearchType</argument>
@@ -970,7 +993,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.fvU1NXF"/>
+      <argument type="service" id=".service_locator.Bf.OnXo"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -2792,7 +2815,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.yJ3k58J"/>
+      <argument type="service" id=".service_locator.Id2tgdv"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -3209,7 +3232,22 @@
       <argument type="service" id="security.authentication.retry_entry_point"/>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
     </service>
-    <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap" public="false"/>
+    <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap" public="false">
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.5dJADCx"/>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.Pn7yvdV"/>
+        <argument type="collection">
+          <argument>ROLE_USER</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+    </service>
     <service id="security.context_listener" class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
       <tag name="monolog.logger" channel="security"/>
       <argument type="service" id="security.token_storage"/>
@@ -3648,6 +3686,12 @@
         <argument key="security.firewall.map.context.dev" type="service" id="security.firewall.map.context.dev"/>
         <argument key="security.firewall.map.context.main" type="service" id="security.firewall.map.context.main"/>
       </argument>
+    </service>
+    <service id=".security.request_matcher.5dJADCx" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/admin</argument>
+    </service>
+    <service id=".security.request_matcher.Pn7yvdV" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/profile</argument>
     </service>
     <service id="security.command.user_password_encoder" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand" public="false">
       <tag name="console.command" command="security:encode-password"/>
@@ -4466,6 +4510,9 @@
     <service id="pugx_autocompleter.filter.doctrine_subscriber" class="PUGX\AutocompleterBundle\Listener\FilterSubscriber" public="true">
       <tag name="kernel.event_subscriber"/>
     </service>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\AdminController" class="App\Controller\AdminController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ArticleController" class="App\Controller\ArticleController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ArticleController" class="App\Controller\ArticleController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ArticleController" class="App\Controller\ArticleController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -4478,12 +4525,16 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CmsTextType" class="App\Form\CmsTextType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\CmsTextType" class="App\Form\CmsTextType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PropertyType" class="App\Form\PropertyType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\PropertyType" class="App\Form\PropertyType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SearchType" class="App\Form\SearchType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\SearchType" class="App\Form\SearchType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CmsTextRepository" class="App\Repository\CmsTextRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\CmsTextRepository" class="App\Repository\CmsTextRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\EpihubRepository" class="App\Repository\EpihubRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\EpihubRepository" class="App\Repository\EpihubRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PropertyRepository" class="App\Repository\PropertyRepository" autowire="true" abstract="true"/>
@@ -4652,6 +4703,18 @@
         <argument>make:migration</argument>
       </call>
     </service>
+    <service id=".service_locator.3wcTBi_" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="userRepo" type="service" id="App\Repository\UserRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.MXxEF7e" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="cms" type="service" id=".errored..service_locator.MXxEF7e.App\Entity\CmsText"/>
+      </argument>
+    </service>
     <service id=".service_locator.N38ovWA" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -4678,9 +4741,12 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator._OjGBu8" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.JHowlZw" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Controller\AdminController::admin" type="service" id=".service_locator.3wcTBi_"/>
+        <argument key="App\Controller\AdminController::admin_list_user" type="service" id=".service_locator.3wcTBi_"/>
+        <argument key="App\Controller\AdminController::edit" type="service" id=".service_locator.MXxEF7e"/>
         <argument key="App\Controller\ArticleController::DELETE" type="service" id=".service_locator.N38ovWA"/>
         <argument key="App\Controller\ArticleController::edit" type="service" id=".service_locator.N38ovWA"/>
         <argument key="App\Controller\HomeController::article" type="service" id=".service_locator.zf96HF0"/>
@@ -4688,6 +4754,9 @@
         <argument key="App\Controller\HomeController::show" type="service" id=".service_locator.N38ovWA"/>
         <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.wyrb61."/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.EbLunuf"/>
+        <argument key="App\Controller\AdminController:admin" type="service" id=".service_locator.3wcTBi_"/>
+        <argument key="App\Controller\AdminController:admin_list_user" type="service" id=".service_locator.3wcTBi_"/>
+        <argument key="App\Controller\AdminController:edit" type="service" id=".service_locator.MXxEF7e"/>
         <argument key="App\Controller\ArticleController:DELETE" type="service" id=".service_locator.N38ovWA"/>
         <argument key="App\Controller\ArticleController:edit" type="service" id=".service_locator.N38ovWA"/>
         <argument key="App\Controller\HomeController:article" type="service" id=".service_locator.zf96HF0"/>
@@ -4766,11 +4835,12 @@
       <argument type="service" id="debug.argument_resolver.variadic.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.fvU1NXF" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.Bf.OnXo" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="PUGX\AutocompleterBundle\Form\Type\AutocompleteType" type="service" id="pugx_autocompleter.autocomplete"/>
         <argument key="PUGX\AutocompleterBundle\Form\Type\AutocompleteFilterType" type="service" id="pugx_autocompleter.filter_autocomplete"/>
+        <argument key="App\Form\CmsTextType" type="service" id="App\Form\CmsTextType"/>
         <argument key="App\Form\PropertyType" type="service" id="App\Form\PropertyType"/>
         <argument key="App\Form\RegistrationFormType" type="service" id="App\Form\RegistrationFormType"/>
         <argument key="App\Form\SearchType" type="service" id="App\Form\SearchType"/>
@@ -4785,9 +4855,10 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.yJ3k58J" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.Id2tgdv" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Repository\CmsTextRepository" type="service" id="App\Repository\CmsTextRepository"/>
         <argument key="App\Repository\EpihubRepository" type="service" id="App\Repository\EpihubRepository"/>
         <argument key="App\Repository\PropertyRepository" type="service" id="App\Repository\PropertyRepository"/>
         <argument key="App\Repository\UserRepository" type="service" id="App\Repository\UserRepository"/>
@@ -4965,6 +5036,12 @@
         <argument key="twig" type="service" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
+    <service id=".service_locator.KTVqfp6.App\Controller\AdminController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\AdminController"/>
+      <argument>App\Controller\AdminController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.KTVqfp6" method="withContext"/>
+    </service>
     <service id=".service_locator.KTVqfp6.App\Controller\ArticleController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\ArticleController"/>
       <argument>App\Controller\ArticleController</argument>
@@ -5081,10 +5158,11 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator._OjGBu8"/>
+      <argument type="service" id=".service_locator.JHowlZw"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
+    <service id=".errored..service_locator.MXxEF7e.App\Entity\CmsText" class="App\Entity\CmsText"/>
     <service id=".errored..service_locator.N38ovWA.App\Entity\Property" class="App\Entity\Property"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <argument type="service" id=".service_locator._8xViNp"/>
@@ -5423,7 +5501,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupCollectionInterface" alias="webpack_encore.entrypoint_lookup_collection" public="false"/>
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator._OjGBu8"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.JHowlZw"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id=".service_locator.tSKDlY7" alias=".1_ServiceLocator~a8zKzu1" public="false"/>

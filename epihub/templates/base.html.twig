@@ -11,7 +11,7 @@
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
 
-        <a class="navbar-brand" href="/">EpiHub</a>
+        <a class="navbar-brand" href="/">{% if name is defined %}{{ name }}{% endif %}</a>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item {% if current_menu is defined and current_menu == 'home' %}active{% endif %}">
@@ -32,6 +32,11 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{ path('profile') }}">            {{ app.user.username }} </a>
               </li>
+              {% if is_granted('ROLE_ADMIN') %}
+              <li>
+                <a class="nav-link" href="{{ path('admin') }}"> Admin</a>
+              </li>
+              {% endif %}
               <li class="nav-item">
                 <a class="nav-link" href="{{ path('logout') }}">Deconnexion</a>
               </li>
@@ -101,8 +106,8 @@
           <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-youtube-play"></span><span>google</span></a></div>
         </div>
       </footer>
-      <script src="{{ asset('js/autocomplete.js') }}"></script>
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+      <script src="{{ asset('bundles/pugxautocompleter/js/autocompleter-jqueryui.js') }}"></script>      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body>

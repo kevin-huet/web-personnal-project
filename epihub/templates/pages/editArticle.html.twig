@@ -1,6 +1,10 @@
+{% set name  %}
+    {{ cms }}
+{% endset %}
 {% extends "base.html.twig" %}
-{% block title 'EpiHub - Editer un article' %}
-{% block body %}
+{% block title %}
+    EpiHub - Editer : {{ property.title }}
+{% endblock %}{% block body %}
     <div class="container mt-4">
         {{ include ('pages/_form.html.twig', {form: form, button: 'Editer'}) }}
 

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\RegistrationFormType;
+use App\Repository\CmsTextRepository;
 use App\Security\LoginFormAuthenticator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,6 +15,11 @@ use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
 
 class RegistrationController extends AbstractController
 {
+    public function __construct(CmsTextRepository $cms)
+    {
+        $this->name = $cms->findAllCms()[0]->getSiteName();
+    }
+
     /**
      * @Route("/register", name="app_register")
      */
@@ -47,6 +53,7 @@ class RegistrationController extends AbstractController
         }
 
         return $this->render('registration/register.html.twig', [
+            'cms' => $this->name,
             'registrationForm' => $form->createView(),
         ]);
     }
