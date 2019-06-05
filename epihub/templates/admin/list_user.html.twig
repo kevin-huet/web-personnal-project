@@ -2,6 +2,9 @@
 {% block title 'AdminHub - List user' %}
 {% block body %}
     {% if is_granted('ROLE_ADMIN') %}
+        {% if current_menu is defined %}
+            {{ test }}
+            {% endif %}
         <div class="container">
         <table class="table">
             <thead>
@@ -16,7 +19,28 @@
                 <tr>
                     <th scope="row">{{ user.id }}</th>
                     <td>{{ user.username }}</td>
-                    <td>{{ user.roles[0] }}</td>
+                    <td>
+                        <form class="form-inline my-2 my-lg-0" action="{{ path('admin.update.role', {id: user.id}) }}" method="post">
+                            <select id="inputState" class="form-control" name="query">
+                                {% if user.roles[0] == "ROLE_ADMIN" %}
+                                    <option selected value="ROLE_ADMIN">{{ user.roles[0] }}</option>
+                                    <option value="ROLE_MODERATOR"> ROLE_MODERATOR</option>
+                                    <option value="ROLE_USER"> ROLE_USER</option>
+                                {% endif %}
+                                {% if user.roles[0] == "ROLE_MODERATOR" %}
+                                    <option value="ROLE_ADMIN"> ROLE_ADMIN</option>
+                                    <option selected value="ROLE_MODERATOR">{{ user.roles[0] }}</option>
+                                    <option value="ROLE_USER"> ROLE_USER</option>
+                                {% endif %}
+                                {% if user.roles[0] == "ROLE_USER" %}
+                                    <option value="ROLE_ADMIN"> ROLE_ADMIN</option>
+                                    <option value="ROLE_MODERATOR"> ROLE_MODERATOR</option>
+                                    <option selected value="ROLE_USER">{{ user.roles[0] }}</option>
+                                {% endif %}
+                            </select>
+                            <button class="btn btn-primary" type="submit">Editer</button>
+                        </form>
+                    </td>
                 </tr>
         {% endfor %}
         </tbody>

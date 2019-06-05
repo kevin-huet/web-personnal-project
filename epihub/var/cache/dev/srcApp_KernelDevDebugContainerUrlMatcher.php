@@ -49,13 +49,16 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
                         .')'
                     .')'
                     .'|/a(?'
-                        .'|dmin/edit_text/([^/]++)(*:197)'
+                        .'|dmin/edit_(?'
+                            .'|user_rank/([^/]++)(*:205)'
+                            .'|text/([^/]++)(*:226)'
+                        .')'
                         .'|rticle/(?'
-                            .'|delete/([^/]++)(*:230)'
-                            .'|([a-z0-9\\-]*)\\-([^/]++)(*:261)'
+                            .'|delete/([^/]++)(*:260)'
+                            .'|([a-z0-9\\-]*)\\-([^/]++)(*:291)'
                         .')'
                     .')'
-                    .'|/edit/([^/]++)(*:285)'
+                    .'|/edit/([^/]++)(*:315)'
                 .')/?$}sDu',
         ];
         $this->dynamicRoutes = [
@@ -66,10 +69,11 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'], ['token'], null, null, false, false, null]],
             149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'], ['token'], null, null, false, false, null]],
             159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-            197 => [[['_route' => 'admin.edit', '_controller' => 'App\\Controller\\AdminController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-            230 => [[['_route' => 'article.delete', '_controller' => 'App\\Controller\\ArticleController::DELETE'], ['id'], null, null, false, true, null]],
-            261 => [[['_route' => 'article.show', '_controller' => 'App\\Controller\\HomeController::show'], ['slug', 'id'], null, null, false, true, null]],
-            285 => [[['_route' => 'article.edit', '_controller' => 'App\\Controller\\ArticleController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+            205 => [[['_route' => 'admin.update.role', '_controller' => 'App\\Controller\\AdminController::edit_rank'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+            226 => [[['_route' => 'admin.edit', '_controller' => 'App\\Controller\\AdminController::edit_cms'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+            260 => [[['_route' => 'article.delete', '_controller' => 'App\\Controller\\ArticleController::DELETE'], ['id'], null, null, false, true, null]],
+            291 => [[['_route' => 'article.show', '_controller' => 'App\\Controller\\HomeController::show'], ['slug', 'id'], null, null, false, true, null]],
+            315 => [[['_route' => 'article.edit', '_controller' => 'App\\Controller\\ArticleController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
         ];
     }
 }

@@ -3,8 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\CmsText;
+use App\Entity\User;
 use App\Repository\PropertyRepository;
 use App\Form\CmsTextType;
+use App\Form\RoleType;
 use App\Repository\UserRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -71,13 +73,33 @@ class AdminController extends AbstractController
     }
 
     /**
+     * @Route("/admin/edit_user_rank/{id}", name="admin.update.role", methods="GET|POST")
+     * @param User $user
+     * @param Request $request
+     * @return Response
+     */
+    public function edit_rank(User $user, Request $request)
+    {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+        $query = $request->request->get("query");
+        if (!$query)
+            return $this->redirectToRoute('admin');
+        $role = $user->getRoles();
+        $role[0] = $query;
+        $user->setRoles($role);
+        $this->em->flush();
+        return $this->redirectToRoute('admin.list_user');
+    }
+
+    /**
      * @Route("/admin/edit_text/{id}", name="admin.edit", methods="GET|POST")
      * @param CmsText $cms
      * @param Request $request
      * @return Response
      */
-    public function edit(CmsText $cms, Request $request)
+    public function edit_cms(CmsText $cms, Request $request)
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $form = $this->createForm(CmsTextType::class, $cms);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
