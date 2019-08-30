@@ -8,7 +8,7 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="rainbow">
         <div class="container">
 
         <a class="navbar-brand" href="/">{% if name is defined %}{{ name }}{% endif %}</a>
@@ -63,7 +63,6 @@
         </div>
       </nav>
       {% block body %}{% endblock %}
-      {% block javascripts %}{% endblock %}
       <footer class="section footer-classic context-dark bg-image" style="background: #343a40!important;">
         <div class="container">
           <div class="row row-30">
@@ -111,4 +110,6 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body>
+{% block javascripts %}
+{% endblock %}
 </html>

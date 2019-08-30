@@ -61,7 +61,7 @@ class __TwigTemplate_5a2a2597af83ddfb9ea5548b22b7f9ffaed16735290b0aac121fd4b4f5a
         // line 9
         echo "    </head>
     <body>
-      <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+      <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\" id=\"rainbow\">
         <div class=\"container\">
 
         <a class=\"navbar-brand\" href=\"/\">";
@@ -172,9 +172,6 @@ class __TwigTemplate_5a2a2597af83ddfb9ea5548b22b7f9ffaed16735290b0aac121fd4b4f5a
         // line 65
         $this->displayBlock('body', $context, $blocks);
         // line 66
-        echo "      ";
-        $this->displayBlock('javascripts', $context, $blocks);
-        // line 67
         echo "      <footer class=\"section footer-classic context-dark bg-image\" style=\"background: #343a40!important;\">
         <div class=\"container\">
           <div class=\"row row-30\">
@@ -219,14 +216,17 @@ class __TwigTemplate_5a2a2597af83ddfb9ea5548b22b7f9ffaed16735290b0aac121fd4b4f5a
       </footer>
       <script src=\"//code.jquery.com/ui/1.12.1/jquery-ui.min.js\"></script>
       <script src=\"";
-        // line 110
+        // line 109
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bundles/pugxautocompleter/js/autocompleter-jqueryui.js"), "html", null, true);
         echo "\"></script>      <script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\" integrity=\"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN\" crossorigin=\"anonymous\"></script>
       <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\" integrity=\"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q\" crossorigin=\"anonymous\"></script>
       <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\" integrity=\"sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl\" crossorigin=\"anonymous\"></script>
     </body>
-</html>
 ";
+        // line 113
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 115
+        echo "</html>";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -287,7 +287,7 @@ class __TwigTemplate_5a2a2597af83ddfb9ea5548b22b7f9ffaed16735290b0aac121fd4b4f5a
 
     }
 
-    // line 66
+    // line 113
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -316,7 +316,7 @@ class __TwigTemplate_5a2a2597af83ddfb9ea5548b22b7f9ffaed16735290b0aac121fd4b4f5a
 
     public function getDebugInfo()
     {
-        return array (  291 => 66,  274 => 65,  257 => 8,  239 => 7,  223 => 110,  178 => 67,  175 => 66,  173 => 65,  156 => 51,  147 => 44,  141 => 41,  138 => 40,  132 => 37,  129 => 36,  127 => 35,  120 => 33,  117 => 32,  114 => 31,  105 => 27,  96 => 24,  94 => 23,  89 => 21,  83 => 18,  77 => 17,  69 => 14,  62 => 9,  60 => 8,  56 => 7,  52 => 6,  45 => 1,);
+        return array (  291 => 113,  274 => 65,  257 => 8,  239 => 7,  229 => 115,  227 => 113,  220 => 109,  175 => 66,  173 => 65,  156 => 51,  147 => 44,  141 => 41,  138 => 40,  132 => 37,  129 => 36,  127 => 35,  120 => 33,  117 => 32,  114 => 31,  105 => 27,  96 => 24,  94 => 23,  89 => 21,  83 => 18,  77 => 17,  69 => 14,  62 => 9,  60 => 8,  56 => 7,  52 => 6,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -331,7 +331,7 @@ class __TwigTemplate_5a2a2597af83ddfb9ea5548b22b7f9ffaed16735290b0aac121fd4b4f5a
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-      <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+      <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\" id=\"rainbow\">
         <div class=\"container\">
 
         <a class=\"navbar-brand\" href=\"/\">{% if name is defined %}{{ name }}{% endif %}</a>
@@ -386,7 +386,6 @@ class __TwigTemplate_5a2a2597af83ddfb9ea5548b22b7f9ffaed16735290b0aac121fd4b4f5a
         </div>
       </nav>
       {% block body %}{% endblock %}
-      {% block javascripts %}{% endblock %}
       <footer class=\"section footer-classic context-dark bg-image\" style=\"background: #343a40!important;\">
         <div class=\"container\">
           <div class=\"row row-30\">
@@ -434,7 +433,8 @@ class __TwigTemplate_5a2a2597af83ddfb9ea5548b22b7f9ffaed16735290b0aac121fd4b4f5a
       <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\" integrity=\"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q\" crossorigin=\"anonymous\"></script>
       <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\" integrity=\"sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl\" crossorigin=\"anonymous\"></script>
     </body>
-</html>
-", "base.html.twig", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/templates/base.html.twig");
+{% block javascripts %}
+{% endblock %}
+</html>", "base.html.twig", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/templates/base.html.twig");
     }
 }

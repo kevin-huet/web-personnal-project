@@ -149,7 +149,16 @@ class __TwigTemplate_6808218615993cddba13e3e215c63ba0bdeab297607e2204d4daa80db74
 </div>
 </div>
 </div>
-
+    <script>
+        var i = 0;
+        function change() {
+            var doc = document.getElementById(\"rainbow\");
+            var color = [\"black\", \"blue\", \"brown\", \"green\"];
+            doc.style.backgroundColor = color[i];
+            i = (i + 1) % color.length;
+        }
+        setInterval(change, 1000);
+    </script>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -232,7 +241,16 @@ class __TwigTemplate_6808218615993cddba13e3e215c63ba0bdeab297607e2204d4daa80db74
 </div>
 </div>
 </div>
-
-{% endblock %}", "pages/index.html.twig", "/Library/WebServer/Documents/epihub/templates/pages/index.html.twig");
+    <script>
+        var i = 0;
+        function change() {
+            var doc = document.getElementById(\"rainbow\");
+            var color = [\"black\", \"blue\", \"brown\", \"green\"];
+            doc.style.backgroundColor = color[i];
+            i = (i + 1) % color.length;
+        }
+        setInterval(change, 1000);
+    </script>
+{% endblock %}", "pages/index.html.twig", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/templates/pages/index.html.twig");
     }
 }
