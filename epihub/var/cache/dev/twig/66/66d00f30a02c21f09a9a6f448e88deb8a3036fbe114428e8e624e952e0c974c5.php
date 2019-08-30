@@ -61,6 +61,6 @@ class __TwigTemplate_0a8ebfc47ac1ec8c93594715ff34bb919332bc529934e5c27196765a3e4
     public function getSourceContext()
     {
         return new Source("<?php echo \$view['form']->block(\$form, 'form_widget_simple', ['type' => isset(\$type) ? \$type : 'color']);
-", "@Framework/Form/color_widget.html.php", "/Library/WebServer/Documents/epihub/vendor/symfony/framework-bundle/Resources/views/Form/color_widget.html.php");
+", "@Framework/Form/color_widget.html.php", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/framework-bundle/Resources/views/Form/color_widget.html.php");
     }
 }

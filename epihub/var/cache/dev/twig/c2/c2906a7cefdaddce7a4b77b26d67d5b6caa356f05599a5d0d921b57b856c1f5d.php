@@ -67,6 +67,6 @@ class __TwigTemplate_d84861b945477a77b220145b549e1cea43bbbb4d1a14805ddfa7455e4bf
     ? strtr(\$label_format, ['%name%' => \$name, '%id%' => \$id])
     : \$view['form']->humanize(\$name); } ?>
 <button type=\"<?php echo isset(\$type) ? \$view->escape(\$type) : 'button' ?>\" <?php echo \$view['form']->block(\$form, 'button_attributes') ?>><?php echo \$view->escape(false !== \$translation_domain ? \$view['translator']->trans(\$label, [], \$translation_domain) : \$label) ?></button>
-", "@Framework/Form/button_widget.html.php", "/Library/WebServer/Documents/epihub/vendor/symfony/framework-bundle/Resources/views/Form/button_widget.html.php");
+", "@Framework/Form/button_widget.html.php", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/framework-bundle/Resources/views/Form/button_widget.html.php");
     }
 }

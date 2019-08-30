@@ -318,6 +318,6 @@ $context["trace"], "level", []) == 2)) {
     Note: These matching logs are based on the current router configuration,
     which might differ from the configuration used when profiling this request.
 </p>
-", "@WebProfiler/Router/panel.html.twig", "/Library/WebServer/Documents/epihub/vendor/symfony/web-profiler-bundle/Resources/views/Router/panel.html.twig");
+", "@WebProfiler/Router/panel.html.twig", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/web-profiler-bundle/Resources/views/Router/panel.html.twig");
     }
 }

@@ -466,6 +466,6 @@ class __TwigTemplate_cd844be40ccc05786c3c0f4109653a22a6aa55982c678ce0c786d6b0c1e
         </div>
     {% endif %}
 {% endblock %}
-", "@WebProfiler/Collector/twig.html.twig", "/Library/WebServer/Documents/epihub/vendor/symfony/web-profiler-bundle/Resources/views/Collector/twig.html.twig");
+", "@WebProfiler/Collector/twig.html.twig", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/web-profiler-bundle/Resources/views/Collector/twig.html.twig");
     }
 }

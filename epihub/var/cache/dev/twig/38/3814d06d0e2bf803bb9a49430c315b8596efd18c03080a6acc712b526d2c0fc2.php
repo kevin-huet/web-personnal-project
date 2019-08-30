@@ -1092,6 +1092,6 @@ $context["log"], "priorityName", []) == "WARNING")) ? ("status-warning") : (""))
         {% endif %}
     {% endif %}
 {% endmacro %}
-", "@WebProfiler/Collector/logger.html.twig", "/Library/WebServer/Documents/epihub/vendor/symfony/web-profiler-bundle/Resources/views/Collector/logger.html.twig");
+", "@WebProfiler/Collector/logger.html.twig", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/web-profiler-bundle/Resources/views/Collector/logger.html.twig");
     }
 }

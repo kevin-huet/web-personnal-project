@@ -783,6 +783,6 @@ class __TwigTemplate_cd768f1fa72e709c292391ca04eaa082138690ea7aa8b68d7849797a008
     </table>
     {% endfor %}
 {% endmacro %}
-", "@WebProfiler/Collector/messenger.html.twig", "/Library/WebServer/Documents/epihub/vendor/symfony/web-profiler-bundle/Resources/views/Collector/messenger.html.twig");
+", "@WebProfiler/Collector/messenger.html.twig", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/web-profiler-bundle/Resources/views/Collector/messenger.html.twig");
     }
 }

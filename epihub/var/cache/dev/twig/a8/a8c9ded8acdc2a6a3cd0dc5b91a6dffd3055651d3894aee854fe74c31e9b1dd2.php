@@ -102,6 +102,6 @@ class __TwigTemplate_320300015f857af03534da536ce182fcd8c9f1ef2fb8fa2ba944a91c188
   {{ include('@Twig/Exception/trace.txt.twig', { trace: trace }, with_context = false) }}
 {% endfor %}
 {% endif %}
-", "@Twig/Exception/traces.txt.twig", "/Library/WebServer/Documents/epihub/vendor/symfony/twig-bundle/Resources/views/Exception/traces.txt.twig");
+", "@Twig/Exception/traces.txt.twig", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/twig-bundle/Resources/views/Exception/traces.txt.twig");
     }
 }

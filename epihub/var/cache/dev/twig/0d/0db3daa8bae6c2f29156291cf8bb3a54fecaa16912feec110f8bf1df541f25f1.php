@@ -67,6 +67,6 @@ class __TwigTemplate_f7e1580c15b1609ae282311e3d20a1ac7464ab02477661023795fae44de
     public function getSourceContext()
     {
         return new Source("{{ include('@Twig/Exception/error.xml.twig') }}
-", "@Twig/Exception/error.atom.twig", "/Library/WebServer/Documents/epihub/vendor/symfony/twig-bundle/Resources/views/Exception/error.atom.twig");
+", "@Twig/Exception/error.atom.twig", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/twig-bundle/Resources/views/Exception/error.atom.twig");
     }
 }

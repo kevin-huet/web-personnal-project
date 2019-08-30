@@ -13,7 +13,8 @@ class SecurityController extends AbstractController
 {
     public function __construct(CmsTextRepository $cms)
     {
-        $this->name = $cms->findAllCms()[0]->getSiteName();
+        $this->name = "EpiHub";
+	//$cms->findAllCms()[0]->getSiteName();
     }
 
     /**

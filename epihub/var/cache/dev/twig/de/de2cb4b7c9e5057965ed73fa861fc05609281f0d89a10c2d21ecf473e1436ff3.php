@@ -67,6 +67,6 @@ class __TwigTemplate_bd5d8a9bb9d074b1a2d515ffa4fe8fdf18441c19d06c2689ad70a7bd160
     <?php \$attr['data-prototype'] = \$view->escape(\$view['form']->row(\$prototype)) ?>
 <?php endif ?>
 <?php echo \$view['form']->widget(\$form, ['attr' => \$attr]) ?>
-", "@Framework/Form/collection_widget.html.php", "/Library/WebServer/Documents/epihub/vendor/symfony/framework-bundle/Resources/views/Form/collection_widget.html.php");
+", "@Framework/Form/collection_widget.html.php", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/framework-bundle/Resources/views/Form/collection_widget.html.php");
     }
 }

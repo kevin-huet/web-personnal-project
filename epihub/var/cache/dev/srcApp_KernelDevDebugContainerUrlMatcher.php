@@ -22,7 +22,7 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
             '/admin' => [[['_route' => 'admin', '_controller' => 'App\\Controller\\AdminController::admin'], null, null, null, false, false, null]],
             '/admin/list_user' => [[['_route' => 'admin.list_user', '_controller' => 'App\\Controller\\AdminController::admin_list_user'], null, null, null, false, false, null]],
-            '/article/create' => [[['_route' => 'article.create', '_controller' => 'App\\Controller\\ArticleController::new'], null, null, null, false, false, null]],
+            '/article/create' => [[['_route' => 'article.create', '_controller' => 'App\\Controller\\Article\\ArticleController::new'], null, null, null, true, false, null]],
             '/article' => [[['_route' => 'article', '_controller' => 'App\\Controller\\HomeController::article'], null, null, null, false, false, null]],
             '/search' => [[['_route' => 'search', '_controller' => 'App\\Controller\\HomeController::search'], null, ['POST' => 0, 'GET' => 1], null, false, false, null]],
             '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
@@ -54,11 +54,11 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
                             .'|text/([^/]++)(*:226)'
                         .')'
                         .'|rticle/(?'
-                            .'|delete/([^/]++)(*:260)'
-                            .'|([a-z0-9\\-]*)\\-([^/]++)(*:291)'
+                            .'|/edit/([^/]++)(*:259)'
+                            .'|delete/([^/]++)(*:282)'
+                            .'|([a-z0-9\\-]*)\\-([^/]++)(*:313)'
                         .')'
                     .')'
-                    .'|/edit/([^/]++)(*:315)'
                 .')/?$}sDu',
         ];
         $this->dynamicRoutes = [
@@ -71,9 +71,9 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
             205 => [[['_route' => 'admin.update.role', '_controller' => 'App\\Controller\\AdminController::edit_rank'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
             226 => [[['_route' => 'admin.edit', '_controller' => 'App\\Controller\\AdminController::edit_cms'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
-            260 => [[['_route' => 'article.delete', '_controller' => 'App\\Controller\\ArticleController::DELETE'], ['id'], null, null, false, true, null]],
-            291 => [[['_route' => 'article.show', '_controller' => 'App\\Controller\\HomeController::show'], ['slug', 'id'], null, null, false, true, null]],
-            315 => [[['_route' => 'article.edit', '_controller' => 'App\\Controller\\ArticleController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+            259 => [[['_route' => 'article.edit', '_controller' => 'App\\Controller\\Article\\ArticleController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+            282 => [[['_route' => 'article.delete', '_controller' => 'App\\Controller\\Article\\ArticleController::delete'], ['id'], null, null, false, true, null]],
+            313 => [[['_route' => 'article.show', '_controller' => 'App\\Controller\\HomeController::show'], ['slug', 'id'], null, null, false, true, null]],
         ];
     }
 }

@@ -61,6 +61,6 @@ class __TwigTemplate_2e5283c06986e634df6eb91e409f3e068c59b6da50b5966d86cef76fcc4
     public function getSourceContext()
     {
         return new Source("<?php echo \$view['form']->block(\$form, 'form_widget_simple', ['type' => isset(\$type) ? \$type : 'search']) ?>
-", "@Framework/Form/search_widget.html.php", "/Library/WebServer/Documents/epihub/vendor/symfony/framework-bundle/Resources/views/Form/search_widget.html.php");
+", "@Framework/Form/search_widget.html.php", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/framework-bundle/Resources/views/Form/search_widget.html.php");
     }
 }

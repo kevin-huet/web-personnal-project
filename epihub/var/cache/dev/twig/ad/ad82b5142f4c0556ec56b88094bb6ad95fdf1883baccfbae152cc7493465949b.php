@@ -61,6 +61,6 @@ class __TwigTemplate_80052c608f336c70bb591eddc2016fbb0f62b145a1a515777104d99c63b
     public function getSourceContext()
     {
         return new Source("<?php echo \$view['form']->block(\$form, 'choice_widget_options') ?>
-", "@Framework/Form/choice_options.html.php", "/Library/WebServer/Documents/epihub/vendor/symfony/framework-bundle/Resources/views/Form/choice_options.html.php");
+", "@Framework/Form/choice_options.html.php", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/framework-bundle/Resources/views/Form/choice_options.html.php");
     }
 }

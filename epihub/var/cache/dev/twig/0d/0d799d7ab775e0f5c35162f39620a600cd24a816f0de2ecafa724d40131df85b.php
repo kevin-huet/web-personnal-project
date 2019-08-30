@@ -169,6 +169,6 @@ class __TwigTemplate_35b44f5cc1d19deb053903fe59c54aa9224b496aa62929a9c17d91a0d14
         {%- endfor -%}
     </pre>
 {% endif %}
-", "@Doctrine/Collector/explain.html.twig", "/Library/WebServer/Documents/epihub/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig");
+", "@Doctrine/Collector/explain.html.twig", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig");
     }
 }

@@ -61,6 +61,6 @@ class __TwigTemplate_5f9b130fb9a09baac92dde787a3debfaf895558b1a04e9ac678ac9e7144
     public function getSourceContext()
     {
         return new Source("<?php echo \$view['form']->block(\$form, 'form_widget_simple', ['type' => isset(\$type) ? \$type : 'hidden']) ?>
-", "@Framework/Form/hidden_widget.html.php", "/Library/WebServer/Documents/epihub/vendor/symfony/framework-bundle/Resources/views/Form/hidden_widget.html.php");
+", "@Framework/Form/hidden_widget.html.php", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/framework-bundle/Resources/views/Form/hidden_widget.html.php");
     }
 }

@@ -69,6 +69,6 @@ class __TwigTemplate_e53981d32adac0439764b05faee429818377dc30db4a4f81b277b36c093
 <?php else: ?>
 <?php echo \$view['form']->block(\$form, 'choice_widget_collapsed') ?>
 <?php endif ?>
-", "@Framework/Form/choice_widget.html.php", "/Library/WebServer/Documents/epihub/vendor/symfony/framework-bundle/Resources/views/Form/choice_widget.html.php");
+", "@Framework/Form/choice_widget.html.php", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/framework-bundle/Resources/views/Form/choice_widget.html.php");
     }
 }

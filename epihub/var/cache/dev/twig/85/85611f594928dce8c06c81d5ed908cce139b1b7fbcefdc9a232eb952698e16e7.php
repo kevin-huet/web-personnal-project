@@ -152,6 +152,6 @@ class __TwigTemplate_92c78141042edd853928fff994579d666c6dd3c49f9f0651cffca7a2fef
     <h2>{{ messages[about].title }}</h2>
     <p>{{ messages[about].message }}</p>
 {% endblock %}
-", "@WebProfiler/Profiler/info.html.twig", "/Library/WebServer/Documents/epihub/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/info.html.twig");
+", "@WebProfiler/Profiler/info.html.twig", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/info.html.twig");
     }
 }

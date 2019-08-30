@@ -928,6 +928,6 @@ class __TwigTemplate_b8bf4ccfd2aedc35095d02bafbbbc368c49dfc45649f4ff41498654619d
         </tbody>
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/translation.html.twig", "/Library/WebServer/Documents/epihub/vendor/symfony/web-profiler-bundle/Resources/views/Collector/translation.html.twig");
+", "@WebProfiler/Collector/translation.html.twig", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/web-profiler-bundle/Resources/views/Collector/translation.html.twig");
     }
 }

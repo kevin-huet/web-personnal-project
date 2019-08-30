@@ -2233,17 +2233,17 @@
     },
     {
         "name": "pugx/autocompleter-bundle",
-        "version": "v1.4.2",
-        "version_normalized": "1.4.2.0",
+        "version": "v1.4.3",
+        "version_normalized": "1.4.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/PUGX/PUGXAutoCompleterBundle.git",
-            "reference": "dc85f39e70dfc2f2dbc01314bccb90a8bd728f47"
+            "reference": "7c1d007bb24cbbf203d4a086084cd04f58d3d321"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/PUGX/PUGXAutoCompleterBundle/zipball/dc85f39e70dfc2f2dbc01314bccb90a8bd728f47",
-            "reference": "dc85f39e70dfc2f2dbc01314bccb90a8bd728f47",
+            "url": "https://api.github.com/repos/PUGX/PUGXAutoCompleterBundle/zipball/7c1d007bb24cbbf203d4a086084cd04f58d3d321",
+            "reference": "7c1d007bb24cbbf203d4a086084cd04f58d3d321",
             "shasum": ""
         },
         "require": {
@@ -2257,12 +2257,12 @@
         },
         "require-dev": {
             "lexik/form-filter-bundle": "^5.0",
-            "phpunit/phpunit": "^7.0"
+            "phpunit/phpunit": "^7.0|^8.0"
         },
         "suggest": {
             "lexik/form-filter-bundle": "To use autocomplete on a filter."
         },
-        "time": "2018-07-27T08:46:10+00:00",
+        "time": "2019-03-12T14:34:30+00:00",
         "type": "symfony-bundle",
         "extra": {
             "branch-alias": {

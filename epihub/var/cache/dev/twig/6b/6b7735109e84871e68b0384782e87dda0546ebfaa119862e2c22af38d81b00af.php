@@ -488,6 +488,6 @@ class __TwigTemplate_bd6e6e17ebdcead20785657fcfa1e7156b6ad1e72b780aeab9586766bf8
         {% endif %}
     </div>
 </div>
-", "@Twig/Exception/exception.html.twig", "/Library/WebServer/Documents/epihub/vendor/symfony/twig-bundle/Resources/views/Exception/exception.html.twig");
+", "@Twig/Exception/exception.html.twig", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/twig-bundle/Resources/views/Exception/exception.html.twig");
     }
 }

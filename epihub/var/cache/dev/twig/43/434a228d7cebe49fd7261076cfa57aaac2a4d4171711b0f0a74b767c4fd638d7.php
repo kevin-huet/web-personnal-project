@@ -174,6 +174,6 @@ class __TwigTemplate_0315c8986a20974a39f59fd8ec44a6a840b82da98b5e37c8f1b6838db8f
         </tr>
     </tbody>
 </table>
-", "@Twig/Exception/traces_text.html.twig", "/Library/WebServer/Documents/epihub/vendor/symfony/twig-bundle/Resources/views/Exception/traces_text.html.twig");
+", "@Twig/Exception/traces_text.html.twig", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/twig-bundle/Resources/views/Exception/traces_text.html.twig");
     }
 }

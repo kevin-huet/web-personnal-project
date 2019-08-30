@@ -61,6 +61,6 @@ class __TwigTemplate_c710e9f3c781e3b7fafb2253a0698dcc7419715555c1e4875672ba21a6f
     public function getSourceContext()
     {
         return new Source("<?php echo \$view['form']->block(\$form, 'button_widget', ['type' => isset(\$type) ? \$type : 'reset']) ?>
-", "@Framework/Form/reset_widget.html.php", "/Library/WebServer/Documents/epihub/vendor/symfony/framework-bundle/Resources/views/Form/reset_widget.html.php");
+", "@Framework/Form/reset_widget.html.php", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/framework-bundle/Resources/views/Form/reset_widget.html.php");
     }
 }

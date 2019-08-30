@@ -77,6 +77,6 @@ class __TwigTemplate_7bf051deb91ac534b6e7bf041417973c2bd2d62fb322abce96462df6249
         return new Source("<?xml version=\"1.0\" encoding=\"{{ _charset }}\" ?>
 
 <error code=\"{{ status_code }}\" message=\"{{ status_text }}\" />
-", "@Twig/Exception/error.xml.twig", "/Library/WebServer/Documents/epihub/vendor/symfony/twig-bundle/Resources/views/Exception/error.xml.twig");
+", "@Twig/Exception/error.xml.twig", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/twig-bundle/Resources/views/Exception/error.xml.twig");
     }
 }

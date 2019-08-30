@@ -95,6 +95,6 @@ class __TwigTemplate_a70b2f7d50ffccdec3d4948dc2776df6920447e82de564e14a8ea02cfce
     <?php endif ?>
     <?php echo \$view['form']->block(\$form, 'choice_widget_options', ['choices' => \$choices]) ?>
 </select>
-", "@Framework/Form/choice_widget_collapsed.html.php", "/Library/WebServer/Documents/epihub/vendor/symfony/framework-bundle/Resources/views/Form/choice_widget_collapsed.html.php");
+", "@Framework/Form/choice_widget_collapsed.html.php", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/framework-bundle/Resources/views/Form/choice_widget_collapsed.html.php");
     }
 }

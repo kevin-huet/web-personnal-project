@@ -1671,6 +1671,6 @@ class __TwigTemplate_9c4166b552e88088cae224e3c9373446b85160db5761ac9b6af5fa883ff
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "/Library/WebServer/Documents/epihub/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
     }
 }

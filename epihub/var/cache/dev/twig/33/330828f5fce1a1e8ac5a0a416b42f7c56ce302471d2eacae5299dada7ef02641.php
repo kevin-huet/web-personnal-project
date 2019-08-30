@@ -83,6 +83,6 @@ class __TwigTemplate_925187db32ae7cabf04a1c9c275d92e45891804ecff0a79d95a1f2723fa
     c-0.4-0.4-1.1-1.4-0.7-2.6C6.3,9,6.6,8.6,6.9,8.2c0.9-0.6,1.8-0.7,2.8-0.6c1.2,0.4,1.8,1.1,2.6,1.8c0.5-1.2,1-2.4,1.8-3.5
     C15,5,16,4.3,17.2,4.2c1.3,0.2,2.2,0.7,2.2,1.6C19.4,6.2,19.2,6.9,18.5,6.9z\"/>
 </svg>
-", "@WebProfiler/Icon/symfony.svg", "/Library/WebServer/Documents/epihub/vendor/symfony/web-profiler-bundle/Resources/views/Icon/symfony.svg");
+", "@WebProfiler/Icon/symfony.svg", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/web-profiler-bundle/Resources/views/Icon/symfony.svg");
     }
 }

@@ -2038,6 +2038,6 @@ class __TwigTemplate_e4e3061cc6949a35b94daf2cd97fda588de3812958d8218c991d65eecb6
         {{ tree.form_tree_details(childName, childData, forms_by_hash) }}
     {% endfor %}
 {% endmacro %}
-", "@WebProfiler/Collector/form.html.twig", "/Library/WebServer/Documents/epihub/vendor/symfony/web-profiler-bundle/Resources/views/Collector/form.html.twig");
+", "@WebProfiler/Collector/form.html.twig", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/web-profiler-bundle/Resources/views/Collector/form.html.twig");
     }
 }

@@ -1657,6 +1657,6 @@ class __TwigTemplate_1fac75b4946c87b5294e56992c329b851ae5f304585619a5046c74d7f81
         <canvas width=\"680\" height=\"\" id=\"{{ id }}\" class=\"timeline\"></canvas>
     </div>
 {% endmacro %}
-", "@WebProfiler/Collector/time.html.twig", "/Library/WebServer/Documents/epihub/vendor/symfony/web-profiler-bundle/Resources/views/Collector/time.html.twig");
+", "@WebProfiler/Collector/time.html.twig", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/web-profiler-bundle/Resources/views/Collector/time.html.twig");
     }
 }

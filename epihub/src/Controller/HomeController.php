@@ -16,10 +16,11 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
-    /**
-     * @var ObjectManager
-     */
     private $em;
+    private $cms;
+    private $userRepo;
+    private $name;
+    private $repository;
 
     public function __construct(PropertyRepository $repository, CmsTextRepository $cms, UserRepository $userRepo, ObjectManager $em)
     {
@@ -27,7 +28,11 @@ class HomeController extends AbstractController
         $this->userRepo = $userRepo;
         $this->cms = $cms;
         $this->em = $em;
-        $this->name = $cms->findAllCms()[0]->getSiteName();
+        $name = $cms->findAllCms();
+        if (!empty($name[0]))
+            $this->name = $name[0]->getSiteName();
+        else
+            $this->name = "EpiHub";
     }
 
     /**

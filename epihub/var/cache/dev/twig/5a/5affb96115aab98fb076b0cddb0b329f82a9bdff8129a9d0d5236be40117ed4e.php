@@ -477,6 +477,6 @@ class __TwigTemplate_b68ac870210fdf7296e22afd1529a3a4678f9a45fa9a03c197fe2b8296c
         {% endfor %}
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/events.html.twig", "/Library/WebServer/Documents/epihub/vendor/symfony/web-profiler-bundle/Resources/views/Collector/events.html.twig");
+", "@WebProfiler/Collector/events.html.twig", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/web-profiler-bundle/Resources/views/Collector/events.html.twig");
     }
 }

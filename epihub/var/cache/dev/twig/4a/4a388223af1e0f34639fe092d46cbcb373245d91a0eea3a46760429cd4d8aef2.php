@@ -67,6 +67,6 @@ class __TwigTemplate_5c125eff746787e81c2125f6626d9c20864936ecea1de04809893e9e01c
     public function getSourceContext()
     {
         return new Source("{{ include('@Twig/Exception/error.xml.twig') }}
-", "@Twig/Exception/error.rdf.twig", "/Library/WebServer/Documents/epihub/vendor/symfony/twig-bundle/Resources/views/Exception/error.rdf.twig");
+", "@Twig/Exception/error.rdf.twig", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/twig-bundle/Resources/views/Exception/error.rdf.twig");
     }
 }

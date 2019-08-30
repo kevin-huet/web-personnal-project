@@ -218,6 +218,6 @@ a.doc:hover {
     top: -7em;
     visibility: hidden;
 }
-", "@WebProfiler/Profiler/open.css.twig", "/Library/WebServer/Documents/epihub/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/open.css.twig");
+", "@WebProfiler/Profiler/open.css.twig", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/open.css.twig");
     }
 }

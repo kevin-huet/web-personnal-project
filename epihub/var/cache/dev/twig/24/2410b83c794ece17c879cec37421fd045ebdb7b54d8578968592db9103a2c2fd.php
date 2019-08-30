@@ -61,6 +61,6 @@ class __TwigTemplate_98aec4c5442a7b1743b3ff1cf3951f44f1b5a9149e71b60af9ca42d7c53
     public function getSourceContext()
     {
         return new Source("<?php echo \$view['form']->block(\$form, 'form_widget_simple', ['type' => isset(\$type) ? \$type : 'email']) ?>
-", "@Framework/Form/email_widget.html.php", "/Library/WebServer/Documents/epihub/vendor/symfony/framework-bundle/Resources/views/Form/email_widget.html.php");
+", "@Framework/Form/email_widget.html.php", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/framework-bundle/Resources/views/Form/email_widget.html.php");
     }
 }

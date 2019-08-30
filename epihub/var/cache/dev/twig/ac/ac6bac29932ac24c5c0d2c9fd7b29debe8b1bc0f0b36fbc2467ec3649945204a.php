@@ -67,6 +67,6 @@ class __TwigTemplate_4f1e136598d6a73639fe334cbd221bc0273ebe16e022777fbb1c321c7b6
     public function getSourceContext()
     {
         return new Source("{{ { 'error': { 'code': status_code, 'message': status_text } }|json_encode|raw }}
-", "@Twig/Exception/error.json.twig", "/Library/WebServer/Documents/epihub/vendor/symfony/twig-bundle/Resources/views/Exception/error.json.twig");
+", "@Twig/Exception/error.json.twig", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/twig-bundle/Resources/views/Exception/error.json.twig");
     }
 }

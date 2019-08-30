@@ -71,6 +71,6 @@ class __TwigTemplate_a5e9873296c8383d9872df2fcb9e1b232e30864f2446b9332420084de39
     <?php echo \$view['form']->label(\$child, null, ['translation_domain' => \$choice_translation_domain]) ?>
 <?php endforeach ?>
 </div>
-", "@Framework/Form/choice_widget_expanded.html.php", "/Library/WebServer/Documents/epihub/vendor/symfony/framework-bundle/Resources/views/Form/choice_widget_expanded.html.php");
+", "@Framework/Form/choice_widget_expanded.html.php", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/framework-bundle/Resources/views/Form/choice_widget_expanded.html.php");
     }
 }

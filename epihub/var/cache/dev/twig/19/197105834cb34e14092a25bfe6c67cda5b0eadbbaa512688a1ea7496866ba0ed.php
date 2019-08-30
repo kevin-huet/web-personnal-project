@@ -133,6 +133,6 @@ class __TwigTemplate_1b88664ef3e2e90dd5eaa3700352890f8baae66db2610ce2e241c044a5c
 .exception-message-wrapper .container {
     min-height: auto;
 }
-", "@WebProfiler/Collector/exception.css.twig", "/Library/WebServer/Documents/epihub/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.css.twig");
+", "@WebProfiler/Collector/exception.css.twig", "/home/kevin-huet/projet/perso/web-personnal-project/epihub/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.css.twig");
     }
 }
