@@ -1,0 +1,13 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+home:
+  path: /
+  controller: App\Controller\HomeController::index
+
+profile:
+  path: /profile
+  controller: App\Controller\HomeController::profile
+
+logout:
+  path: /logout
